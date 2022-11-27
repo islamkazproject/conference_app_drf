@@ -23,6 +23,7 @@ router = routers.DefaultRouter()
 router.register(r'presentation', PresentationViewSet)
 router.register(r'room', RoomViewSet, basename='Room')
 router.register(r'schedule', ScheduleViewSet, basename='Schedule')
+router.register(r'main', UserScheduleRelationViewSet, basename='UserScheduleRelation')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

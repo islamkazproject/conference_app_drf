@@ -1,7 +1,8 @@
 
 from rest_framework import viewsets, generics
-from conference_v2.models import Presentation, Room, Schedule
-from conference_v2.serializers import PresentationSerializer, RoomSerializer, ScheduleSerializer
+from conference_v2.models import Presentation, Room, Schedule, UserScheduleRelation
+from conference_v2.serializers import PresentationSerializer, RoomSerializer, ScheduleSerializer, \
+    UserScheduleRelationSerializer
 
 
 class PresentationViewSet(viewsets.ModelViewSet):
@@ -19,4 +20,6 @@ class ScheduleViewSet(viewsets.ModelViewSet):
     serializer_class = ScheduleSerializer
 
 
-
+class UserScheduleRelationViewSet(viewsets.ModelViewSet):
+    queryset = UserScheduleRelation.objects.all()
+    serializer_class = UserScheduleRelationSerializer

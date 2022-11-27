@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from conference_v2.models import Presentation, Room, Schedule
+from conference_v2.models import Presentation, Room, Schedule, UserScheduleRelation
 
 
 class PresentationSerializer(serializers.ModelSerializer):
@@ -19,3 +19,9 @@ class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
         fields = "__all__"
+
+
+class UserScheduleRelationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserScheduleRelation
+        fields = ("id", "user", "schedule", "registration")
