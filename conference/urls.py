@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from conference_v2.yasg import urlpatterns as doc_urls
 
 from conference_v2.views import *
 
@@ -30,3 +31,5 @@ urlpatterns = [
     path('api/v2/', include(router.urls)),
 
 ]
+
+urlpatterns += doc_urls
