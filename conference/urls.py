@@ -20,7 +20,7 @@ from rest_framework import routers
 from conference_v2.views import *
 
 router = routers.DefaultRouter()
-router.register(r'presentation', PresentationViewSet, basename='Presentation')
+router.register(r'presentation', PresentationViewSet)
 router.register(r'room', RoomViewSet, basename='Room')
 router.register(r'schedule', ScheduleViewSet, basename='Schedule')
 
